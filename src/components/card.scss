@@ -1,0 +1,119 @@
+@use '../style/color' as *;
+@use '../style/font' as *;
+
+.card {
+  --card-image-padding-y: 16px;
+  --card-image-fit: cover;
+  position: relative;
+  overflow: hidden;
+  border: 0;
+  border-radius: 22px;
+  min-height: 260px;
+  display: block;
+  background: linear-gradient(180deg, #18212a 0%, #0f151b 100%);
+  text-decoration: none;
+  isolation: isolate;
+  transition:
+    transform 160ms ease,
+    box-shadow 160ms ease;
+}
+
+.card::before,
+.card::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+}
+
+.card::before {
+  inset: var(--card-image-padding-y) 0;
+  background: var(--card-image) center / var(--card-image-fit) no-repeat;
+  border-radius: inherit;
+  z-index: 0;
+}
+
+.card::after {
+  background:
+    linear-gradient(
+      180deg,
+      rgb(5 10 16 / 0.08) 0%,
+      rgb(5 10 16 / 0.24) 42%,
+      rgb(5 10 16 / 0.72) 100%
+    ),
+    linear-gradient(
+      90deg,
+      rgb(5 10 16 / 0.56) 0%,
+      rgb(5 10 16 / 0.24) 56%,
+      rgb(5 10 16 / 0) 100%
+    );
+  z-index: 0;
+}
+
+.card:hover,
+.card:focus-visible {
+  transform: translateY(-2px);
+  box-shadow:
+    0 24px 48px rgb(0 0 0 / 0.55),
+    0 12px 28px rgb(34 211 238 / 0.14);
+}
+
+.card:focus-visible {
+  outline: none;
+}
+
+.card__content {
+  position: relative;
+  z-index: 1;
+  min-height: 260px;
+  padding: 28px 22px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  gap: 14px;
+}
+
+.card__title {
+  margin: 0;
+  color: #fff;
+  font-family: $font-ubuntu;
+  font-size: clamp(1.75rem, 4vw, 2.4rem);
+  font-weight: 700;
+  letter-spacing: 0.01em;
+  line-height: 1.1;
+}
+
+.card__description {
+  margin: 0;
+  max-width: 42rem;
+  color: rgb(255 255 255 / 0.84);
+  font-family: $font-ubuntu;
+  font-size: clamp(1rem, 2.3vw, 1.18rem);
+  font-weight: 400;
+  line-height: 1.55;
+}
+
+.card__tags {
+  margin: 6px 0 0;
+  padding: 0;
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.card__tag {
+  padding: 7px 12px;
+  border-radius: 999px;
+  border: 1px solid rgb(34 211 238 / 0.42);
+  background: rgb(34 211 238 / 0.14);
+  color: $color-accent;
+  font-family: $font-ubuntu;
+  font-size: 0.95rem;
+  font-weight: 500;
+  letter-spacing: 0.01em;
+}
+
+.card__image {
+  display: none;
+}

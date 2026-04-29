@@ -1,0 +1,5 @@
+$color-accent: rgb(34 211 238 / var(--tw-text-opacity, 1));
+
+@mixin color-accent {
+  color: $color-accent;
+}

@@ -1,0 +1,74 @@
+@use '../style/color' as *;
+@use '../style/font' as *;
+
+.service-card {
+  overflow: hidden;
+  border-radius: 22px;
+  background:
+    radial-gradient(120% 140% at 0% 0%, rgb(34 211 238 / 0.08) 0%, transparent 46%),
+    radial-gradient(120% 140% at 100% 0%, rgb(34 211 238 / 0.06) 0%, transparent 52%),
+    linear-gradient(180deg, #121a22 0%, #0b1218 100%);
+  box-shadow: 0 24px 56px rgb(0 0 0 / 0.52);
+  border: 1px solid rgb(255 255 255 / 0.08);
+}
+
+.service-card__body {
+  padding: 26px 22px 18px;
+}
+
+.service-card__header {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+.service-card__icon {
+  width: 44px;
+  height: 44px;
+  display: grid;
+  place-items: center;
+  border-radius: 999px;
+  background:
+    radial-gradient(circle at 30% 30%, rgb(255 255 255 / 0.24) 0%, transparent 60%),
+    linear-gradient(135deg, rgb(34 211 238 / 0.28) 0%, rgb(34 211 238 / 0.08) 60%, rgb(0 0 0 / 0) 100%);
+  border: 1px solid rgb(255 255 255 / 0.10);
+  font-size: 1.2rem;
+}
+
+.service-card__title {
+  margin: 0;
+  color: #fff;
+  font-family: $font-ubuntu;
+  font-size: 1.55rem;
+  font-weight: 700;
+  letter-spacing: 0.01em;
+}
+
+.service-card__description {
+  margin: 16px 0 0;
+  color: rgb(255 255 255 / 0.8);
+  font-family: $font-ubuntu;
+  font-size: 1.05rem;
+  line-height: 1.65;
+}
+
+.service-card__tags {
+  margin: 16px 0 0;
+  padding: 0;
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.service-card__tag {
+  padding: 7px 12px;
+  border-radius: 999px;
+  border: 1px solid rgb(34 211 238 / 0.42);
+  background: rgb(34 211 238 / 0.12);
+  color: $color-accent;
+  font-family: $font-ubuntu;
+  font-size: 0.95rem;
+  font-weight: 500;
+  letter-spacing: 0.01em;
+}

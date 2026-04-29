@@ -1,0 +1,109 @@
+@use '../style/color' as *;
+@use '../style/font' as *;
+
+.home {
+  width: min(100%, 760px);
+  margin: 0 auto;
+  padding: 28px 16px 48px;
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+
+.home__card {
+  position: relative;
+  overflow: hidden;
+  border: 2px solid $color-accent;
+  border-radius: 18px;
+  min-height: 220px;
+  display: block;
+  width: 100%;
+  padding: 0;
+  background:
+    linear-gradient(0deg, rgb(8 14 20 / 0.63), rgb(8 14 20 / 0.63)),
+    var(--home-card-image) center / cover no-repeat;
+  text-decoration: none;
+  text-align: inherit;
+  cursor: pointer;
+  appearance: none;
+  isolation: isolate;
+  transition:
+    transform 160ms ease,
+    box-shadow 160ms ease;
+}
+
+.home__card:hover,
+.home__card:focus-visible {
+  transform: translateY(-2px);
+  box-shadow: 0 12px 28px rgb(34 211 238 / 0.16);
+}
+
+.home__card-overlay {
+  position: relative;
+  z-index: 1;
+  min-height: 220px;
+  padding: 28px 22px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+  text-align: center;
+}
+
+.home__card-title {
+  margin: 0;
+  color: #fff;
+  font-family: $font-ubuntu;
+  font-size: clamp(1.75rem, 4vw, 2.5rem);
+  font-weight: 700;
+  line-height: 1.1;
+}
+
+.home__card-subtitle {
+  margin: 0;
+  max-width: 32rem;
+  color: #d2d7db;
+  font-family: $font-ubuntu;
+  font-size: clamp(1rem, 2.5vw, 1.35rem);
+  font-weight: 400;
+  line-height: 1.5;
+}
+
+.home__card-image {
+  display: none;
+}
+
+@media (min-width: 1100px) {
+  .home {
+    width: 100%;
+    max-width: none;
+    margin: 0;
+    padding: 40px 32px 40px;
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 24px;
+    align-content: start;
+  }
+
+  .home__card {
+    min-height: 280px;
+  }
+
+  .home__card-overlay {
+    min-height: 280px;
+    padding: 26px 24px;
+    align-items: flex-start;
+    justify-content: flex-end;
+    text-align: left;
+  }
+
+  .home__card-title {
+    font-size: clamp(1.8rem, 2vw, 2.4rem);
+  }
+
+  .home__card-subtitle {
+    max-width: 28rem;
+    font-size: clamp(0.98rem, 1.05vw, 1.15rem);
+  }
+}

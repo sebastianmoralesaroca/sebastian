@@ -1,0 +1,76 @@
+.imagenfondo-page {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  background:
+    linear-gradient(180deg, #161616 0%, #242424 48%, #101010 100%);
+}
+
+.imagenfondo-card {
+  width: 100%;
+  min-height: 100vh;
+  background: #000;
+}
+
+.imagenfondo-home-layout {
+  min-height: 100vh;
+}
+
+.imagenfondo-home-content {
+  width: 100%;
+}
+
+.imagenfondo-hero {
+  position: relative;
+  min-height: 68vh;
+  background-image:
+    linear-gradient(0deg, rgba(0, 0, 0, 1) 0%, rgba(0, 0, 0, 0.88) 18%, rgba(0, 0, 0, 0.42) 48%, rgba(0, 0, 0, 0.12) 78%, rgba(0, 0, 0, 0.18) 100%),
+    url('/mei.jpg');
+  background-position: center top;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+@media (min-width: 1100px) {
+  .imagenfondo-page--home,
+  .imagenfondo-page--detail {
+    overflow: hidden;
+  }
+
+  .imagenfondo-page--home .header,
+  .imagenfondo-page--detail .header {
+    position: absolute;
+    inset: 0 0 auto 0;
+  }
+
+  .imagenfondo-page--home .imagenfondo-card,
+  .imagenfondo-page--detail .imagenfondo-card {
+    max-width: 1720px;
+  }
+
+  .imagenfondo-home-layout {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+    height: 100vh;
+    min-height: 100vh;
+  }
+
+  .imagenfondo-page--home .imagenfondo-hero,
+  .imagenfondo-page--detail .imagenfondo-hero {
+    min-height: 100vh;
+    height: 100vh;
+    overflow: hidden;
+  }
+
+  .imagenfondo-home-content {
+    height: 100vh;
+    min-height: 100vh;
+    overflow-y: auto;
+    overflow-x: hidden;
+    overscroll-behavior: contain;
+    -webkit-overflow-scrolling: touch;
+    background:
+      radial-gradient(circle at top left, rgb(34 211 238 / 0.12), transparent 36%),
+      linear-gradient(180deg, #10151b 0%, #05080d 100%);
+  }
+}

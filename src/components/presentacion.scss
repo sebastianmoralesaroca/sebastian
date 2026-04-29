@@ -1,0 +1,127 @@
+@use '../style/color' as *;
+@use '../style/font' as *;
+
+.presentacion {
+  position: absolute;
+  inset: auto 0 0;
+  z-index: 2;
+  padding: 0 16px 40px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 34px;
+  font-family: $font-ubuntu;
+}
+
+.presentacion__copy {
+  width: min(100%, 540px);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  text-align: center;
+}
+
+.presentacion__title {
+  margin: 0;
+  color: #fff;
+  font-size: clamp(3.4rem, 10vw, 5.6rem);
+  font-weight: 900;
+  line-height: 0.95;
+  letter-spacing: 0.04em;
+}
+
+.presentacion__subtitle {
+  margin: 0;
+  display: inline;
+  max-width: 420px;
+  padding: 6px 8px;
+  font-size: clamp(1rem, 3vw, 1.35rem);
+  font-weight: 500;
+  line-height: 1.45;
+  color: $color-accent;
+  box-decoration-break: clone;
+  -webkit-box-decoration-break: clone;
+}
+
+.presentacion__socials {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+}
+
+.presentacion__social-link {
+  width: 64px;
+  height: 64px;
+  border-radius: 999px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  color: #000;
+  background: $color-accent;
+  text-decoration: none;
+  transition:
+    transform 160ms ease,
+    box-shadow 160ms ease;
+}
+
+.presentacion__social-link:hover,
+.presentacion__social-link:focus-visible {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 24px rgb(34 211 238 / 0.28);
+}
+
+.presentacion__social-link svg {
+  width: 30px;
+  height: 30px;
+  fill: currentColor;
+}
+
+@media (min-width: 768px) {
+  .presentacion {
+    padding: 0 60px 52px;
+  }
+
+  .presentacion__socials {
+    width: 100%;
+  }
+}
+
+@media (min-width: 1100px) {
+  .presentacion {
+    inset: auto 0 0;
+    min-height: 100vh;
+    padding: 120px 56px 56px;
+    justify-content: flex-end;
+    gap: 44px;
+  }
+
+  .presentacion__copy {
+    width: min(100%, 720px);
+    gap: 18px;
+  }
+
+  .presentacion__title {
+    font-size: clamp(4.8rem, 7vw, 7.5rem);
+  }
+
+  .presentacion__subtitle {
+    max-width: 560px;
+    font-size: clamp(1.4rem, 1.8vw, 2rem);
+  }
+
+  .presentacion__socials {
+    justify-content: center;
+    gap: 26px;
+  }
+
+  .presentacion__social-link {
+    width: 76px;
+    height: 76px;
+  }
+
+  .presentacion__social-link svg {
+    width: 34px;
+    height: 34px;
+  }
+}
